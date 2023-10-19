@@ -1,6 +1,6 @@
-import mongoose, {mongo} from "mongoose";
+import mongoose, { connect } from "mongoose";
 async function conectaNaDatabase(){
-    mongoose.connect("mongodb+srv://adm:123@cluster0.gf2tacv.mongodb.net/livraria?retryWrites=true&w=majority");
+   mongoose.connect(process.env.DB_CONNECTION_STRING);
 
     return mongoose.connection;
 
